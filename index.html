@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>هوش مصنوعی</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:tahoma;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+direction:rtl;
+}
+
+header{
+background:linear-gradient(135deg,#000,#222);
+padding:80px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:60px;
+color:#00ffff;
+text-shadow:0 0 20px #00ffff;
+}
+
+header p{
+margin-top:20px;
+font-size:20px;
+color:#ccc;
+}
+
+section{
+padding:50px 10%;
+}
+
+h2{
+color:#00ffff;
+margin-bottom:20px;
+}
+
+.card{
+background:#151515;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+transition:0.4s;
+box-shadow:0 0 10px rgba(0,255,255,0.2);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,255,255,0.5);
+}
+
+.question{
+font-weight:bold;
+color:#00ffff;
+margin-bottom:10px;
+}
+
+footer{
+background:#111;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+.creator{
+color:#00ffff;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>هوش مصنوعی</h1>
+<p>مرجع معرفی، آموزش و پرسش و پاسخ درباره هوش مصنوعی</p>
+</header>
+
+<section>
+<h2>هوش مصنوعی چیست؟</h2>
+
+<div class="card">
+هوش مصنوعی (AI) شاخه‌ای از علوم کامپیوتر است که به ساخت سیستم‌هایی می‌پردازد که بتوانند مانند انسان فکر کنند، یاد بگیرند و تصمیم بگیرند.
+</div>
+</section>
+
+<section>
+<h2>آموزش هوش مصنوعی</h2>
+
+<div class="card">
+<h3>مرحله اول</h3>
+یادگیری برنامه‌نویسی Python
+</div>
+
+<div class="card">
+<h3>مرحله دوم</h3>
+آشنایی با یادگیری ماشین (Machine Learning)
+</div>
+
+<div class="card">
+<h3>مرحله سوم</h3>
+کار با مدل‌های هوش مصنوعی مانند ChatGPT
+</div>
+</section>
+
+<section>
+<h2>پرسش و پاسخ</h2>
+
+<div class="card">
+<div class="question">آیا هوش مصنوعی جای انسان را می‌گیرد؟</div>
+خیر، بیشتر به عنوان یک ابزار کمکی برای انسان استفاده می‌شود.
+</div>
+
+<div class="card">
+<div class="question">بهترین زبان برنامه‌نویسی برای هوش مصنوعی چیست؟</div>
+پایتون محبوب‌ترین زبان برنامه‌نویسی در این حوزه است.
+</div>
+
+<div class="card">
+<div class="question">آیا یادگیری هوش مصنوعی سخت است؟</div>
+با تمرین و آموزش مناسب، هر کسی می‌تواند آن را یاد بگیرد.
+</div>
+</section>
+
+<footer>
+<div class="creator">
+طراحی و توسعه توسط Yasin
+</div>
+</footer>
+
+</body>
+</html>
+<button onclick="toggleTheme()" id="themeBtn">☀️ حالت روز</button>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("light");
+
+    const btn = document.getElementById("themeBtn");
+
+    if(document.body.classList.contains("light")){
+        btn.innerHTML = "🌙 حالت شب";
+    }else{
+        btn.innerHTML = "☀️ حالت روز";
+    }
+}
+</script>
+
+<style>
+.light{
+    background:#f5f5f5;
+    color:black;
+}
+
+#themeBtn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+</style>
+<section>
+<h2>چت‌بات هوش مصنوعی</h2>
+
+<div id="chatBox" style="background:#151515;padding:20px;border-radius:15px;">
+    <div id="messages"></div>
+
+    <input type="text" id="userInput" placeholder="سوال خود را بنویسید..."
+    style="width:70%;padding:10px;">
+
+    <button onclick="sendMessage()">ارسال</button>
+</div>
+</section>
+
+<script>
+function sendMessage(){
+
+let input=document.getElementById("userInput").value;
+let messages=document.getElementById("messages");
+
+messages.innerHTML += "<p><b>شما:</b> "+input+"</p>";
+
+let answer="متوجه شدم، لطفاً سوال بیشتری بپرسید.";
+
+if(input.includes("سلام")){
+answer="سلام! خوش آمدی.";
+}
+else if(input.includes("هوش مصنوعی")){
+answer="هوش مصنوعی فناوری‌ای است که به کامپیوترها توانایی یادگیری و تصمیم‌گیری می‌دهد.";
+}
+
+messages.innerHTML += "<p><b>ربات:</b> "+answer+"</p>";
+
+document.getElementById("userInput").value="";
+}
+</script>
